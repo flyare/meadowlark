@@ -2,13 +2,7 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var app = express();
 
-var fortunes = [
-    "Conquer your fears or they will conquer you.",
-    "Rivers need springs.",
-    "Do not fear what you don't know.",
-    "You will have a pleasant surprise.",
-    "Whenever possible, keep it simple.",
-];
+var fortunes = require('./lib/fortune');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars');
@@ -23,8 +17,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-    var randomForture = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about', {fortune: randomForture});
+    res.render('about', {fortune: fortunes.getFortune()});
 });
 
 //Custom 404 page
