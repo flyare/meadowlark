@@ -1,1 +1,17 @@
 <h1>Welcome to Meadowlark Travel</h1>
+<ul>
+    {{#each tours}}
+    {{! I'm in a new block...and the context has changed }}
+        <li>
+            {{name}} - {{price}}
+            {{#if ../currencies}}
+                ({{../../currency.addrev}})
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>
+{{#section 'jquery'}}
+    <script>
+        //test
+    </script>
+{{/section}}

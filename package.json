@@ -2,8 +2,11 @@
   "name": "application-name",
   "version": "0.0.1",
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "bootstrap": "^3.3.6",
     "express": "*",
-    "express-handlebars": "*"
+    "express-handlebars": "*",
+    "formidable": "^1.0.17"
   },
   "devDependencies": {
     "chai": "^3.4.1",
